@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleAgent - AI Code Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SimpleAgent</h1>
+            <p class="subtitle">AI-Powered Code Generation & Query Processing</p>
+        </header>
+
+        <main>
+            <div class="query-section">
+                <form id="queryForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="query">Enter your query:</label>
+                        <textarea 
+                            id="query" 
+                            name="query" 
+                            rows="6" 
+                            placeholder="Describe what you want to build or ask a question..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fileUpload">Upload additional context (PDF, TXT, DOCX):</label>
+                        <input 
+                            type="file" 
+                            id="fileUpload" 
+                            name="file" 
+                            accept=".pdf,.txt,.md,.docx"
+                        >
+                        <small class="file-hint">Optional: Upload a file with additional requirements or context</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="templateBtn" class="btn btn-secondary">Load Template</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary">Process Query</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="templates-section" id="templatesSection" style="display: none;">
+                <h3>Query Templates</h3>
+                <div class="templates-grid" id="templatesGrid"></div>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <h3>Output</h3>
+                <div id="outputContent"></div>
+                <div id="downloadSection" style="display: none;">
+                    <a id="downloadLink" href="#" class="btn btn-download">Download Output</a>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing your query...</p>
+            </div>
+
+            <div class="error" id="error" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>SimpleAgent v1.0.0 - Built with FastAPI & AI</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
+
