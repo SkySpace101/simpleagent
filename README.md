@@ -32,6 +32,7 @@ simple_agent/
 │       └── script.js        # Frontend logic
 ├── outputs/                 # Generated outputs directory
 ├── requirements.txt         # Python dependencies
+├── dockerfile               # Python Standard dockerfile
 └── README.md
 ```
 
