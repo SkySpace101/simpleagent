@@ -10,14 +10,16 @@ if __name__ == "__main__":
     print("SimpleAgent Server Starting...")
     print("="*50)
     print("\nAccess the application at:")
-    print("  - http://localhost:8000")
-    print("  - http://127.0.0.1:8000")
+##    print("  - http://localhost:8000")
+##    print("  - http://127.0.0.1:8000")
+    print("  - http://0.0.0.0:8000")
     print("\nPress CTRL+C to stop the server")
     print("="*50 + "\n")
     
     uvicorn.run(
         "app.main:app",
-        host="localhost",  # Bind to localhost only
+##        host="localhost",  # Bind to localhost only
+        host="0.0.0.0",   # Bind to all IPs
         port=8000,
         reload=True
     )
